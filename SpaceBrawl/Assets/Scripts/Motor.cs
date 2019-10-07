@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class Motor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float forceMult;
+
+    private Rigidbody rb;
+
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Move();
+    }
+
+    void Move()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += transform.forward * Time.deltaTime * forceMult;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += -transform.forward * Time.deltaTime * forceMult;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(.8f, 0, 0, Space.Self);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(-.8f, 0, 0, Space.Self);
+        }
     }
 }

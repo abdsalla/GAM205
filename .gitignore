@@ -61,3 +61,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+SpaceBrawl/Library
+*.meta
+SpaceBrawl/Assets/Plugins/Editor/JetBrains

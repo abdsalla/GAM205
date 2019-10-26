@@ -15,7 +15,7 @@ public class PlayerLook : MonoBehaviour
     private void Awake()
     {
         LockCursor();// calls function
-        xAxisClamp = 0.0f;
+        xAxisClamp = .0f;
         yAxisClamp = .0f;
     }
     //for the mouse so you cant look up and down 
@@ -61,8 +61,8 @@ public class PlayerLook : MonoBehaviour
 
             ClampYAxisRotationToValue(270.0f);
         }
-        playerBody.Rotate(Vector3.up * mouseX);  //Lets the player rotate.
-        playerBody.Rotate(Vector3.right * mouseY);
+        //playerBody.Rotate(Vector3.up * mouseX);  //Lets the player rotate.
+        //playerBody.Rotate(Vector3.right * mouseY);
     }
 
     private void ClampXAxisRotationToValue(float value)

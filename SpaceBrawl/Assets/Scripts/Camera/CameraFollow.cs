@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField]
-    private Transform target;
+    private GameObject target;
 
     [SerializeField]
     private Vector3 offsetPosition;
@@ -40,26 +40,26 @@ public class CameraFollow : MonoBehaviour
         // compute position
         if (offsetPositionSpace == Space.Self)
         {
-            transform.position = target.TransformPoint(offsetPosition);
+            transform.position = target.transform.TransformPoint(offsetPosition);
         }
         else
         {
-            transform.position = target.position + offsetPosition;
+            transform.position = target.transform.position + offsetPosition;
         }
 
         // compute rotation
         if (lookAt)
         {
-            transform.LookAt(target);
+            transform.LookAt(target.transform);
         }
         else
         {
-            transform.rotation = target.rotation;
+            transform.rotation = target.transform.rotation;
         }
     }
 
     void SetTarget()
     {
-        target = instance.currentPlayer.transform;
+        target = GameObject.FindWithTag("Target");
     }
 }

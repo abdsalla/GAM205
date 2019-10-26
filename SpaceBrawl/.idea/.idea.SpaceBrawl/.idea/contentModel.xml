@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\ablai\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ablai\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_SpaceBrawl.-1335642114.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ablai\Documents\GAM205\SpaceBrawl" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Art" t="Include">
+          <e p="readme.txt" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="AI" t="Include">
+            <e p="AIController.cs" t="Include" />
+          </e>
+          <e p="Camera" t="Include">
+            <e p="CameraFollow.cs" t="Include" />
+            <e p="PlayerLook.cs" t="Include" />
+          </e>
+          <e p="GameManager.cs" t="Include" />
+          <e p="Projectiles" t="Include">
+            <e p="Firing.cs" t="Include" />
+            <e p="Shot.cs" t="Include" />
+          </e>
+          <e p="UFO Components" t="Include">
+            <e p="Motor.cs" t="Include" />
+            <e p="TankData.cs" t="Include" />
+          </e>
+        </e>
+        <e p="VolumetricLines" t="Include">
+          <e p="ExampleScenes" t="Include">
+            <e p="ExampleScripts" t="Include">
+              <e p="CannonBehavior.cs" t="Include" />
+              <e p="CreateSinShapedLineStrip.cs" t="Include" />
+              <e p="ShotBehavior.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Utils" t="Include">
+              <e p="TransformExtensionMethods.cs" t="Include" />
+            </e>
+            <e p="VolumetricLineBehavior.cs" t="Include" />
+            <e p="VolumetricLineSettings.cs" t="Include" />
+            <e p="VolumetricLineStripBehavior.cs" t="Include" />
+            <e p="VolumetricLineVertexData.cs" t="Include" />
+            <e p="VolumetricMultiLineBehavior.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="_SimpleShader.cginc" t="Include" />
+            <e p="_StripShader.cginc" t="Include" />
+            <e p="Additive.shader" t="Include" />
+            <e p="AlphaBlended.shader" t="Include" />
+            <e p="Fast-Additive.shader" t="Include" />
+            <e p="Fast-AlphaBlended.shader" t="Include" />
+            <e p="Strip-Additive.shader" t="Include" />
+            <e p="Strip-AlphaBlended.shader" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="SpaceBrawl.sln" t="IncludeFlat" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>

@@ -10,11 +10,16 @@ public class TankData : MonoBehaviour
 
     public float currentHealth { get; set; }
     public float maxHealth;
+    
+    private KeyCode lastHitKey;
+
+    private Motor motor;
 
     void Start()
     {
         maxHealth = 100f;
         currentHealth = maxHealth;
+        motor = GetComponent<Motor>();
     }
 
     // Player damage received
@@ -23,7 +28,12 @@ public class TankData : MonoBehaviour
         currentHealth -= damageValue;
         healthBar.fillAmount = CalculateHealth();
         //If the current health is less than 0, set it to zero so it doesn't go under
-        if (currentHealth < 0) currentHealth = 0;
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+            Explode();
+        }
+
         //if (currentHealth == 0) gameObject.SetActive(false);
         return currentHealth;
     }
@@ -43,4 +53,45 @@ public class TankData : MonoBehaviour
     {
         return currentHealth / maxHealth;
     }
+
+    public void Explode()
+    {
+        Destroy(this.gameObject);
+    }
+    
+    void OnGUI()
+    {
+        string keyString;
+        if (Input.anyKey)
+        {
+            Debug.Log("Key Press Detected");
+            if (Event.current.Equals(Event.KeyboardEvent("w")))
+            {
+                lastHitKey = Event.current.keyCode;
+                keyString = lastHitKey.ToString();
+                motor.Move(keyString);
+            }
+            else if (Event.current.Equals(Event.KeyboardEvent("a")))
+            {
+                lastHitKey = Event.current.keyCode;
+                keyString = lastHitKey.ToString();
+                motor.Move(keyString);
+            }
+            else if (Event.current.Equals(Event.KeyboardEvent("s")))
+            {
+                lastHitKey = Event.current.keyCode;
+                keyString = lastHitKey.ToString();
+                motor.Move(keyString);
+            }
+            else if (Event.current.Equals(Event.KeyboardEvent("d")))
+            {
+                lastHitKey = Event.current.keyCode;
+                keyString = lastHitKey.ToString();
+                motor.Move(keyString);
+            }
+        }              
+    }
+    
+    
+    
 }

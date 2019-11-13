@@ -18,11 +18,11 @@ public class Firing : MonoBehaviour
         }   
     }
 
-    void Fire()
+    public void Fire()
     {
         OverheatCheck();
 
-        if (Input.GetKeyDown(KeyCode.Space) && overheating != true)
+        if (Input.GetKeyDown(KeyCode.Space) && overheating == false && gameObject.GetComponent<TankData>())
         {
             GameObject activeRayShot = Instantiate(shotPrefab, muzzle.position, muzzle.rotation) as GameObject;
             shotCount++;
@@ -31,11 +31,25 @@ public class Firing : MonoBehaviour
         }
     }
 
-    void OverheatCheck()
+    public void AutomatedFire()
+    {
+        OverheatCheck();
+
+        if (overheating == false && gameObject.GetComponent<AIController>())
+        {
+            GameObject activeRayShot = Instantiate(shotPrefab, muzzle.position, muzzle.rotation) as GameObject;
+            shotCount++;
+            Destroy(activeRayShot, laserLifetime);
+        }
+    }
+
+    IEnumerator OverheatCheck()
     {
         if (shotCount > 5)
         {
             overheating = true;
+            yield return new WaitForSeconds(3f);
+            overheating = false;
         }
     }
 }

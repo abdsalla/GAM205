@@ -15,6 +15,12 @@ public class GameManager : MonoBehaviour
     public GameObject enemy;
     public int enemyCount;
     private int desiredAmount = 6;
+    [SerializeField] private float ufoSpeed;
+    public static float UFOSpeed => instance.ufoSpeed;
+    [SerializeField] private float aggroRadius;
+    public static float AggroRadius => instance.aggroRadius;
+    [SerializeField] private float attackRange;
+    public static float AttackRange => instance.attackRange;
 
     [Header("Spawn Locations")]
     public GameObject playerSpawn;

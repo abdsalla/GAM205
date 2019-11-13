@@ -7,22 +7,22 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private string mouseXInputName; //input info
     [SerializeField] private string mouseYInputName; //input info
     [SerializeField] private float mouseSensitivity; // input info
-    [SerializeField] private Transform playerBody; // for the player
+    [SerializeField] private Transform playerBody; // transform of the player
 
     private float xAxisClamp;
     private float yAxisClamp;
 
     private void Awake()
     {
-        LockCursor();// calls function
+       // LockCursor();// calls function
         xAxisClamp = .0f;
         yAxisClamp = .0f;
     }
     //for the mouse so you cant look up and down 
-    private void LockCursor()
+   /* private void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
-    }
+    }*/
 
     private void Update()
     {
@@ -59,10 +59,10 @@ public class PlayerLook : MonoBehaviour
         {
             yAxisClamp = -90.0f;
 
-            ClampYAxisRotationToValue(270.0f);
+            ClampYAxisRotationToValue(110.0f);
         }
-        //playerBody.Rotate(Vector3.up * mouseX);  //Lets the player rotate.
-        //playerBody.Rotate(Vector3.right * mouseY);
+        playerBody.Rotate(Vector3.up * mouseX);  //Lets the player rotate.
+        playerBody.Rotate(Vector3.right * mouseY);
     }
 
     private void ClampXAxisRotationToValue(float value)

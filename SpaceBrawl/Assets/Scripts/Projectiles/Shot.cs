@@ -21,17 +21,14 @@ public class Shot : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other)
-    {
-        TankData targetRef;
-        
+    {   
         if (other.gameObject.tag == "Player")
         {
             instance.currentPlayerData.ReceiveDamage(damageDealt);
         }
         else if (other.gameObject.tag == "Enemy")
         {
-            targetRef = other.gameObject.GetComponent<TankData>();
-            targetRef.ReceiveDamage(damageDealt);
+            Destroy(other.gameObject);
         }
     }   
 }

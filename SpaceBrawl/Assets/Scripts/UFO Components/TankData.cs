@@ -7,7 +7,6 @@ public class TankData : MonoBehaviour
 {
     [Header("UI Elements")]
     public Image healthBar;
-
     public float currentHealth { get; set; }
     public float maxHealth;
     
@@ -89,9 +88,7 @@ public class TankData : MonoBehaviour
                 keyString = lastHitKey.ToString();
                 motor.Move(keyString);
             }
-        }              
-    }
-    
-    
-    
+        }
+        else if (gameObject.GetComponent<AIController>() == true) { } // Do Nothing      
+    }   
 }

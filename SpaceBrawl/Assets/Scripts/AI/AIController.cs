@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
+    [Header("Visuals")]
     private GameObject rayVisual;
     private MeshRenderer gameObjectRenderer;
     private Color hostileColor;
@@ -15,14 +16,14 @@ public class AIController : MonoBehaviour
 
     void OnEnable()
     {
-        hostileColor = new Color(400f, 10f, 400f, 0f);
+        // Set different color for all AI
+        hostileColor = new Color(400f, 10f, 400f, 0f);  
         gameObjectRenderer = this.GetComponentInChildren<MeshRenderer>();
         gameObjectRenderer.material.color = hostileColor;
-
-        InitializeStateMachine();
+        InitializeStateMachine(); // Statemachine call
     }
 
-    private void InitializeStateMachine()
+    private void InitializeStateMachine() // Statemachine dictionary that holds all relevant states
     {
         var states = new Dictionary<Type, BaseState>()
         {
@@ -35,7 +36,7 @@ public class AIController : MonoBehaviour
 
     }
 
-    public void SetTarget(Transform target)
+    public void SetTarget(Transform target) // Set target
     {
         Target = target;
     }

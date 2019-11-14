@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Motor : MonoBehaviour
 {
-    public float forceMult;
-    public Transform tf; 
+    public float forceMult; // speed
+    public Transform tf; // cached transform
 
     private void Awake()
     {
         tf = gameObject.GetComponent<Transform>();
     }
 
-    public void Move(string input)
+    public void Move(string input) // Detect string of key press then move accordingly
     {
         switch (input)
         {
@@ -21,12 +21,6 @@ public class Motor : MonoBehaviour
                 break;
             case "S":
                 tf.position += -tf.forward * Time.deltaTime * forceMult;
-                break;
-            case "A":
-                tf.Rotate(0f, -5f, 0f);
-                break;
-            case "D":
-                tf.Rotate(0f, 5f, 0f);
                 break;
         }     
     }

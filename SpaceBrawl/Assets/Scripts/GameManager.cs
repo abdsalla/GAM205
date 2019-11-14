@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject currentPlayer;
     public TankData currentPlayerData;
+    public float score;
 
     [Header("Enemy")]
     public GameObject enemy;
@@ -40,9 +41,9 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
-        PlayerSpawn();
-        UpdateUIValues();
-        EnemySpawn();
+        PlayerSpawn(); // Make the Player
+        UpdateUIValues(); // Update their UI
+        EnemySpawn(); // Make Enemies
     }
 
     void UpdateUIValues()
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
         currentPlayerData = currentPlayer.GetComponent<TankData>();
     }
 
-    void PlayerSpawn()
+    void PlayerSpawn() 
     {
         if (!currentPlayer)
         {
@@ -69,4 +70,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void AwardPoint(float pointsEarned) // Award the Player with points 
+    {
+        score += pointsEarned;
+    }
+
 }

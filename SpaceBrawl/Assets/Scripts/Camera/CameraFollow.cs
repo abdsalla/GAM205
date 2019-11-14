@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField]
-    private GameObject target;
+    private GameObject target; // Focus
 
     [SerializeField]
     private Vector3 offsetPosition;
@@ -30,7 +30,7 @@ public class CameraFollow : MonoBehaviour
 
     public void Refresh()
     {
-        if (target == null)
+        if (target == null) // Set target if there is none
         {
             Debug.LogWarning("Missing target ref, grabbing active player", this);
             SetTarget();

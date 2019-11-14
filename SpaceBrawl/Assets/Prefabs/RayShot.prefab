@@ -174,6 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelSpeed: 1000
   damageDealt: 0
+  isFromPlayer: 0
+  pointsOnKill: 30
 --- !u!65 &5115351239499099492
 BoxCollider:
   m_ObjectHideFlags: 0

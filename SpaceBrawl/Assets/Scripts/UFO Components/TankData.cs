@@ -53,12 +53,12 @@ public class TankData : MonoBehaviour
         return currentHealth / maxHealth;
     }
 
-    public void Explode()
+    public void Explode()  // Game Over
     {
         Destroy(this.gameObject);
     }
     
-    void OnGUI()
+    void OnGUI() // Detects PLayer key presses then turn them into strings for movement
     {
         string keyString;
         if (Input.anyKey)
@@ -70,25 +70,12 @@ public class TankData : MonoBehaviour
                 keyString = lastHitKey.ToString();
                 motor.Move(keyString);
             }
-            else if (Event.current.Equals(Event.KeyboardEvent("a")))
-            {
-                lastHitKey = Event.current.keyCode;
-                keyString = lastHitKey.ToString();
-                motor.Move(keyString);
-            }
             else if (Event.current.Equals(Event.KeyboardEvent("s")))
             {
                 lastHitKey = Event.current.keyCode;
                 keyString = lastHitKey.ToString();
                 motor.Move(keyString);
             }
-            else if (Event.current.Equals(Event.KeyboardEvent("d")))
-            {
-                lastHitKey = Event.current.keyCode;
-                keyString = lastHitKey.ToString();
-                motor.Move(keyString);
-            }
-        }
-        else if (gameObject.GetComponent<AIController>() == true) { } // Do Nothing      
+        }   
     }   
 }

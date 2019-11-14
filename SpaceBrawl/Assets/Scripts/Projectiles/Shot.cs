@@ -28,6 +28,7 @@ public class Shot : MonoBehaviour
         }
         else if (other.gameObject.tag == "Enemy")
         {
+            Debug.Log("Threat Neutralized");
             Destroy(other.gameObject);
         }
     }   

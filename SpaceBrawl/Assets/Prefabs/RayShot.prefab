@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3981259683956498820}
   - component: {fileID: 2826761335147133591}
   - component: {fileID: -1372261690719037974}
+  - component: {fileID: 5115351239499099492}
   m_Layer: 0
   m_Name: RayShot
   m_TagString: Untagged
@@ -173,3 +174,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelSpeed: 1000
   damageDealt: 0
+--- !u!65 &5115351239499099492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972132306811093356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.394943, y: 10.634655, z: 61.954323}
+  m_Center: {x: -3.6974716, y: -0.80027246, z: 24.491234}
